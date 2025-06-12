@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("InMem"));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
